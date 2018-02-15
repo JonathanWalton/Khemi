@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<qualifiedTypeNameHistroy>
+<fullyQualifiedTypeName name="main.java.mithrandirr.khemia.common.lib.LibMod"/>
+<fullyQualifiedTypeName name="net.minecraftforge.fml.common.FMLCommonHandler"/>
+<fullyQualifiedTypeName name="net.minecraft.block.material.Material"/>
+<fullyQualifiedTypeName name="java.util.Locale"/>
+<fullyQualifiedTypeName name="net.minecraft.creativetab.CreativeTabs"/>
+<fullyQualifiedTypeName name="net.minecraft.item.Item"/>
+<fullyQualifiedTypeName name="java.util.HashMap"/>
+<fullyQualifiedTypeName name="java.util.Map"/>
+<fullyQualifiedTypeName name="mithrandirr.khemi.api.element.Elements"/>
+<fullyQualifiedTypeName name="mithrandirr.khemi.api.KhemiAPI"/>
+<fullyQualifiedTypeName name="mithrandirr.khemi.common.lib.LibMod"/>
+<fullyQualifiedTypeName name="net.minecraft.block.Block"/>
+</qualifiedTypeNameHistroy>

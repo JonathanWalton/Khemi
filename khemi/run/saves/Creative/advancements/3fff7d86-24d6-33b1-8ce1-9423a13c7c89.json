@@ -1,0 +1,14 @@
+{
+  "minecraft:recipes/decorations/purple_shulker_box": {
+    "criteria": {
+      "has_shulker_shell": "2018-01-31 21:21:05 -0600"
+    },
+    "done": true
+  },
+  "minecraft:adventure/adventuring_time": {
+    "criteria": {
+      "plains": "2018-01-31 21:20:17 -0600"
+    },
+    "done": false
+  }
+}

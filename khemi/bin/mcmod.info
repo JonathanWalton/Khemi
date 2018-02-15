@@ -1,0 +1,17 @@
+[
+{
+  "modid": "khemi",
+  "name": "Khemi",
+  "description": "Alchemagical!",
+  "version": "0.0.1",
+  "mcversion": "${mcversion}",
+  "logoFile": "assets/khemi/textures/logo.png",
+  "url": "",
+  "updateUrl": "",
+  "authorList": ["Mithrandirr"],
+  "credits": "Azanor, Vazkii",
+  "parent": "",
+  "screenshots": [],
+  "dependencies": []
+}
+]

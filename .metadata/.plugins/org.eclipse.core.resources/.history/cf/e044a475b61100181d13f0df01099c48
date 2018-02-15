@@ -1,0 +1,12 @@
+package mithrandirr.khemi.common.block.tile;
+
+import mithrandirr.khemi.client.render.ItemStack;
+import net.minecraft.tileentity.TileEntity;
+
+public class TileMortar extends TileEntity {
+
+	public ItemStack getStack() {
+		return null;
+	}
+
+}

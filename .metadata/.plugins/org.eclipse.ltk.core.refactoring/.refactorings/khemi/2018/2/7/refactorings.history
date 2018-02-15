@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename local variable &apos;te&apos; in &apos;mithrandirr.khemi.client.render.RendererMortar.render(...)&apos; to &apos;mortar&apos;&#x0A;- Original project: &apos;khemi&apos;&#x0A;- Original element: &apos;mithrandirr.khemi.client.render.RendererMortar.render(TileMortar, double, double, double, float, int, float).te&apos;&#x0A;- Renamed element: &apos;te&apos;&#x0A;- Update references to refactored element" description="Rename local variable &apos;te&apos;" id="org.eclipse.jdt.ui.rename.local.variable" input="/src\/main\/java&lt;mithrandirr.khemi.client.render{RendererMortar.java[RendererMortar~render~QTileMortar;~D~D~D~F~I~F@te!527!539!538!539!QTileMortar;!0!true" name="mortar" references="true" stamp="1518633551249" version="1.0"/>
+</session>

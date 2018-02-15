@@ -1,0 +1,7 @@
+package mithrandirr.khemi.common.block.tile;
+
+import net.minecraft.tileentity.TileEntity;
+
+public class TileMortar extends TileEntity {
+
+}

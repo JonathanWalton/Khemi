@@ -1,0 +1,12 @@
+[17:59:40] [main/INFO]: Setting user: Player354
+[17:59:45] [main/WARN]: Skipping bad option: lastServer:
+[17:59:45] [main/INFO]: LWJGL Version: 2.9.2
+[17:59:49] [main/INFO]: Reloading ResourceManager: Default, FMLFileResourcePack:Forge Mod Loader, FMLFileResourcePack:Minecraft Forge, FMLFileResourcePack:Khemi
+[17:59:52] [Sound Library Loader/INFO]: Starting up SoundSystem...
+[17:59:52] [Thread-4/INFO]: Initializing LWJGL OpenAL
+[17:59:52] [Thread-4/INFO]: (The LWJGL binding of OpenAL.  For more information, see http://www.lwjgl.org)
+[17:59:53] [Thread-4/INFO]: OpenAL initialized.
+[17:59:53] [Sound Library Loader/INFO]: Sound engine started
+[17:59:58] [main/INFO]: Created: 512x512 textures-atlas
+[18:00:01] [main/WARN]: Skipping bad option: lastServer:
+[18:00:02] [Realms Notification Availability checker #1/INFO]: Could not authorize you against Realms server: Invalid session id
