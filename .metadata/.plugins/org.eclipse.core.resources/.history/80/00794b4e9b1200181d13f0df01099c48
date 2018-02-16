@@ -1,0 +1,19 @@
+package mithrandirr.khemi.api;
+
+import java.lang.reflect.Array;
+
+import mithrandirr.khemi.api.element.Elements;
+
+public class KhemiAPI {
+	
+	public GrindablePair[] grindables;
+
+	public static void init() {
+		Elements.init();
+	}
+	
+	public void addToGrindables(GrindablePair pairIn) {
+		grindables[grindables.length] = pairIn;
+	}
+	
+}

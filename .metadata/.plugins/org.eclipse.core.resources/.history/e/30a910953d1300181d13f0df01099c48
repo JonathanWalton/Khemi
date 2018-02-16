@@ -1,0 +1,31 @@
+package mithrandirr.khemi.api.mortar;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import mithrandirr.khemi.common.item.ModItems;
+import net.minecraft.init.Blocks;
+import net.minecraft.item.ItemStack;
+
+public class Mortar {
+	
+	private static List<GrindablePair> grindablesIn = new ArrayList<>();
+
+	public static void init() {
+		
+		System.out.println("Registered Grindable Pairs for Khemi Mortar");
+	}
+	
+	public static void addGrindPair(GrindablePair pairIn) {
+		grindables.add(pairIn);
+	}
+	
+	public static GrindablePair returnGrindPair(int index) {
+		return grindables.get(index);
+	}
+	
+	public static int returnGrindablesLength() {
+		return grindables.size();
+	}
+	
+}

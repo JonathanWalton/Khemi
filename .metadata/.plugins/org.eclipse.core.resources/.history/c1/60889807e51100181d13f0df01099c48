@@ -1,0 +1,34 @@
+package mithrandirr.khemi.client.render;
+
+import mithrandirr.khemi.common.block.tile.TileMortar;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.GlStateManager;
+import net.minecraft.client.renderer.block.model.ItemCameraTransforms;
+import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
+import net.minecraft.item.ItemStack;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+
+@SideOnly(Side.CLIENT)
+public class RendererMortar extends TileEntitySpecialRenderer<TileMortar> {
+	
+    public void render(TileMortar mortar, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
+    	
+        GlStateManager.pushMatrix();
+        GlStateManager.translate((float)x + 0.5F, (float)y + 0.24F, (float)z + 0.5F);
+        GlStateManager.scale(.2f, .2f, .2f);
+        GlStateManager.enableCull();
+
+		ItemStack stack = mortar.getStack();
+		Minecraft mc = Minecraft.getMinecraft();
+		if(stack != null) {
+			if(!stack.isEmpty()) {
+				mc.getRenderItem().renderItem(stack, ItemCameraTransforms.TransformType.NONE);
+			}
+		}
+        
+        GlStateManager.popMatrix();
+    	
+    }
+
+}

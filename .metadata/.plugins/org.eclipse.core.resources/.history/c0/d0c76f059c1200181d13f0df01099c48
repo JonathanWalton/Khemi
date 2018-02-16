@@ -1,0 +1,14 @@
+package mithrandirr.khemi.api;
+
+import mithrandirr.khemi.api.element.Elements;
+import mithrandirr.khemi.api.mortar.GrindablePair;
+import mithrandirr.khemi.api.mortar.Mortar;
+
+public class KhemiAPI {
+
+	public static void init() {
+		Elements.init();
+		Mortar.init();
+	}
+	
+}

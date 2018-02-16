@@ -1,0 +1,25 @@
+package mithrandirr.khemi.api.mortar;
+
+public class Mortar {
+	
+	private static GrindablePair[] grindables;
+
+	public static void init() {
+		addGrindPair(new GrindablePair("ironOre", "ironDust"));
+		
+		System.out.println("Registered Grindable Pairs for Khemi Mortar");
+	}
+	
+	public static void addGrindPair(GrindablePair pairIn) {
+		grindables[grindables.length] = pairIn;
+	}
+	
+	public static GrindablePair returnGrindPair(int index) {
+		return grindables[index];
+	}
+	
+	public static int returnGrindablesLength() {
+		return grindables.length;
+	}
+	
+}

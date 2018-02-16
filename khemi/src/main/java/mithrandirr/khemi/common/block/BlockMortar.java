@@ -4,11 +4,14 @@ import javax.annotation.Nonnull;
 
 import org.lwjgl.input.Keyboard;
 
+import mithrandirr.khemi.api.mortar.Mortar;
 import mithrandirr.khemi.common.block.tile.TileMortar;
+import mithrandirr.khemi.common.item.ModItems;
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
+import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
-import net.minecraft.init.Blocks;
+import net.minecraft.init.Items;
 import net.minecraft.item.ItemStack;
 import net.minecraft.tileentity.TileEntity;
 import net.minecraft.util.EnumFacing;
@@ -17,8 +20,6 @@ import net.minecraft.util.math.AxisAlignedBB;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.IBlockAccess;
 import net.minecraft.world.World;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
 
 public class BlockMortar extends BlockModeled {
 
@@ -45,33 +46,70 @@ public class BlockMortar extends BlockModeled {
 		return new TileMortar();
 	}
 
-	@SideOnly(Side.SERVER)
     public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing facing, float hitX, float hitY, float hitZ) {
     	
     		if(Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
-        		if(world.getTileEntity(pos) instanceof TileMortar) {
-        			TileMortar mortar = (TileMortar) world.getTileEntity(pos);
-        			
-        			if(mortar.getStack() != null && !mortar.getStack().isEmpty()) {
-            			player.setHeldItem(hand, mortar.getStack());
-            			mortar.setStack(null);
-        			}
-        		}
+    			if(!world.isRemote) {
+	        		if(world.getTileEntity(pos) instanceof TileMortar) {
+	        			TileMortar mortar = (TileMortar) world.getTileEntity(pos);
+	        			
+	        			if(player.getHeldItem(hand).getItem() != ModItems.pestle) {
+		        			if(mortar.getStack() != null && !mortar.getStack().isEmpty()) {
+		        				if(player.getHeldItem(hand).getItem() == mortar.getStack().getItem())
+		                			player.setHeldItem(hand, new ItemStack(player.getHeldItem(hand).getItem(), player.getHeldItem(hand).getCount() + 1));
+		        				else {
+		        					if(player.getHeldItem(hand) == ItemStack.EMPTY)
+		        						player.setHeldItem(hand, mortar.getStack());
+		        					else
+		        						player.dropItem(mortar.getStack(), false);
+		        				}
+		            			mortar.setStack(ItemStack.EMPTY);
+		            			mortar.sync();
+		        			}
+	        			}
+	        		}
+    			}
     		} else {
-        		if(world.getTileEntity(pos) instanceof TileMortar) {
-        			TileMortar mortar = (TileMortar) world.getTileEntity(pos);
-        			
-        			if(!player.getHeldItem(hand).isEmpty()) {
-            			mortar.setStack(player.getHeldItem(hand));
-            			player.setHeldItem(hand, new ItemStack(Blocks.AIR));
-        			}
-        		}
-    		}
-    		if(world.getTileEntity(pos) instanceof TileMortar) {
-    			TileMortar mortar = (TileMortar) world.getTileEntity(pos);
-    			
-    			if(mortar.getStack() != null && !mortar.getStack().isEmpty()) {
-    				System.out.println(mortar.getStack());
+    			if(!world.isRemote) {
+	        		if(world.getTileEntity(pos) instanceof TileMortar) {
+	        			TileMortar mortar = (TileMortar) world.getTileEntity(pos);
+	        			
+	        			if(player.getHeldItem(hand).getItem() != ModItems.pestle) {
+		        			ItemStack stack = mortar.getStack();
+		        			ItemStack tempStack;
+		        			
+		        			if(!player.getHeldItem(hand).isEmpty()) {
+		        				if(stack.isEmpty()) {
+		                			mortar.setStack(new ItemStack(player.getHeldItem(hand).getItem(), 1));
+		                			if(player.getHeldItem(hand).getCount() == 1)
+		                				player.setHeldItem(hand, ItemStack.EMPTY);
+		                			else
+		                				player.setHeldItem(hand, new ItemStack(player.getHeldItem(hand).getItem(), player.getHeldItem(hand).getCount() - 1));
+		                			mortar.sync();
+		        				} else {
+		        					if(stack.getItem() != player.getHeldItem(hand).getItem()) {
+		            					tempStack = stack;
+		                    			mortar.setStack(new ItemStack(player.getHeldItem(hand).getItem(), 1));
+		        						if(player.getHeldItem(hand).getCount() > 1) {
+		                    				player.setHeldItem(hand, new ItemStack(player.getHeldItem(hand).getItem(), player.getHeldItem(hand).getCount() - 1));
+		            						//player.dropItem(tempStack, false);
+		            						world.spawnEntity(new EntityItem(world, player.posX, player.posY, player.posZ, tempStack));
+		        						} else if(player.getHeldItem(hand).getCount() == 1) {
+		            						player.setHeldItem(hand, tempStack);
+		        						}
+		                    			tempStack = ItemStack.EMPTY;
+		                    			mortar.sync();
+		        					}
+		        				}
+		        			}
+	        			} else if(player.getHeldItem(hand).getItem() == ModItems.pestle) {
+	        				if(mortar.getStack() != ItemStack.EMPTY) {
+	        					mortar.pestle(mortar.getStack().getItem());
+	        					System.out.println(Mortar.returnGrindablesLength());
+	        					System.out.println(mortar.getStack());
+	        				}
+	        			}
+	        		}
     			}
     		}
     	

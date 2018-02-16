@@ -1,0 +1,31 @@
+package mithrandirr.khemi.common.recipe;
+
+import mithrandirr.khemi.api.mortar.Mortar;
+import mithrandirr.khemi.common.item.ModItems;
+import net.minecraft.init.Blocks;
+import net.minecraft.item.ItemStack;
+
+public class RecipesMortar {
+	
+	public static void init() {
+		
+		Mortar.addGrindPair(new ItemStack(Blocks.IRON_ORE), new ItemStack(ModItems.dustIron, 2));
+		Mortar.addGrindPair(new ItemStack(Blocks.GOLD_ORE), new ItemStack(ModItems.dustGold, 2));
+		
+	}
+	
+	public static boolean hasResult(ItemStack oreDictIn) {
+		
+		for(int i = 0; i < Mortar.returnGrindablesLength(); i++) {
+			
+		}
+		
+		return false;
+	}
+	
+	public static ItemStack getOreDictResult(ItemStack oreDictIn) {
+		
+		return null;
+	}
+	
+}

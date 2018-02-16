@@ -1,0 +1,30 @@
+package mithrandirr.khemi.common.block.tile;
+
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+
+public class TileMortar extends TileMod {
+
+	private ItemStack stack = ItemStack.EMPTY;
+	private static final String TAG_ITEM = "item";
+	
+	public ItemStack getStack() {
+		return stack;
+	}
+	
+	public void setStack(ItemStack stack) {
+		this.stack = stack;
+	}
+
+	public void writePacketNBT(NBTTagCompound cmp) {
+		NBTTagCompound itemCmp = new NBTTagCompound();
+		itemCmp = stack.writeToNBT(itemCmp);
+		cmp.setTag(TAG_ITEM, itemCmp);
+	}
+
+	public void readPacketNBT(NBTTagCompound cmp) {
+		NBTTagCompound itemCmp = cmp.getCompoundTag(TAG_ITEM);
+		stack = new ItemStack(itemCmp);
+	}
+	
+}

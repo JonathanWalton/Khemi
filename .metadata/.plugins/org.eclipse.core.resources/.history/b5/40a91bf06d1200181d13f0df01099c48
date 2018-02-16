@@ -1,0 +1,13 @@
+package mithrandirr.khemi.common.block.tile;
+
+public class ModTiles {
+	
+	public static void init() {
+		
+	}
+
+	private static void registerTile(Class<? extends TileEntity> clazz, String key) {
+		GameRegistry.registerTileEntity(clazz, LibResources.PREFIX_MOD + key);
+	}
+
+}

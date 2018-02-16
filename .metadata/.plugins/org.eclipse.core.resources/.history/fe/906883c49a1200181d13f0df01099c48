@@ -1,0 +1,9 @@
+package mithrandirr.khemi.api;
+
+public class GrindablePair {
+	
+	public GrindablePair(String oreDictIn, String oreDictOut) {
+		
+	}
+
+}

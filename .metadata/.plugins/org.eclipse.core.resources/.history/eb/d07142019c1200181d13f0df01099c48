@@ -1,0 +1,9 @@
+package mithrandirr.khemi.api.mortar;
+
+public class Mortar {
+
+	public static void init() {
+		
+	}
+	
+}

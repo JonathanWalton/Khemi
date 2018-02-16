@@ -1,7 +1,9 @@
 package mithrandirr.khemi.common;
 
+import mithrandirr.khemi.api.KhemiAPI;
 import mithrandirr.khemi.common.core.proxy.IProxy;
 import mithrandirr.khemi.common.lib.LibMod;
+import mithrandirr.khemi.common.recipe.RecipesMortar;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -22,6 +24,10 @@ public class Khemi {
 	@EventHandler
 	public void preInit(FMLPreInitializationEvent event) {
 		proxy.preInit(event);
+		KhemiAPI.init();
+		RecipesMortar.init();
+		
+		System.out.println("KHEMI PRE INIT");
 	}
 
 	@EventHandler

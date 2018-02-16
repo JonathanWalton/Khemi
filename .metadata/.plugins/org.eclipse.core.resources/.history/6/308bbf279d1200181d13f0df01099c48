@@ -1,0 +1,30 @@
+package mithrandirr.khemi.common.recipe;
+
+import mithrandirr.khemi.api.mortar.Mortar;
+
+public class RecipesMortar {
+	
+	public boolean hasResult(String oreDictIn) {
+		
+		for(int i = 0; i < Mortar.returnGrindablesLength(); i++) {
+			if(oreDictIn == Mortar.returnGrindPair(i).oreDictIn())
+				return true;
+			else return false;
+		}
+		
+		return false;
+	}
+	
+	public String getOreDictResult(String oreDictIn) {
+		
+		for(int i = 0; i < Mortar.returnGrindablesLength(); i++) {
+			if(oreDictIn == Mortar.returnGrindPair(i).oreDictIn())
+				return Mortar.returnGrindPair(i).oreDictOut();
+			else
+				return null;
+		}
+		
+		return null;
+	}
+	
+}

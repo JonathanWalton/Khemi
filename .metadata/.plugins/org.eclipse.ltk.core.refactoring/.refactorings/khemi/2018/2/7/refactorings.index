@@ -1,1 +1,15 @@
 1518633551249	Rename local variable 'te'
+1518726011648	Delete element
+1518726140560	Copy file
+1518726148392	Rename resource 'petra.png'
+1518726561030	Delete element
+1518732096269	Move compilation unit
+1518802271618	Rename method 'getOreDictResult'
+1518802288187	Rename method 'oreDictIn'
+1518802292355	Rename method 'oreItemStacakIn'
+1518802306879	Rename method 'oreDictOut'
+1518802312484	Rename method 'oreItemStackIn'
+1518802322130	Rename field 'oreIn'
+1518802328182	Rename field 'oreOut'
+1518802336729	Rename local variable 'oreDictIn'
+1518802345304	Rename local variable 'oreDictOut'

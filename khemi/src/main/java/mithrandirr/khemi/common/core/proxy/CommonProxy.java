@@ -1,6 +1,5 @@
 package mithrandirr.khemi.common.core.proxy;
 
-import mithrandirr.khemi.api.KhemiAPI;
 import mithrandirr.khemi.common.core.helper.Vector3;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -11,7 +10,7 @@ public class CommonProxy implements IProxy {
 
 	@Override
 	public void preInit(FMLPreInitializationEvent event) {
-		KhemiAPI.init();
+		
 	}
 
 	@Override

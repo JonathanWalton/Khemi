@@ -1,0 +1,11 @@
+package mithrandirr.khemi.api.mortar;
+
+public class GrindablePair {
+	
+	String oreDictIn;
+	
+	public GrindablePair(String oreDictIn, String oreDictOut) {
+		this.oreDictIn = oreDictIn;
+	}
+
+}

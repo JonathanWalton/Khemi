@@ -1,0 +1,14 @@
+package mithrandirr.khemi.common.item;
+
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
+
+public class ItemPestle extends ItemMod {
+
+	public ItemPestle(String name) {
+		super(name);
+	}
+
+}

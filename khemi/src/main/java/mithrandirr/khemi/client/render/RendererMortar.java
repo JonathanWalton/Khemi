@@ -1,10 +1,12 @@
 package mithrandirr.khemi.client.render;
 
 import mithrandirr.khemi.common.block.tile.TileMortar;
+import net.minecraft.block.Block;
 import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.block.model.ItemCameraTransforms;
 import net.minecraft.client.renderer.tileentity.TileEntitySpecialRenderer;
+import net.minecraft.init.Blocks;
 import net.minecraft.item.ItemStack;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
@@ -15,15 +17,22 @@ public class RendererMortar extends TileEntitySpecialRenderer<TileMortar> {
     public void render(TileMortar mortar, double x, double y, double z, float partialTicks, int destroyStage, float alpha) {
     	
         GlStateManager.pushMatrix();
-        GlStateManager.translate((float)x + 0.5F, (float)y + 0.1F, (float)z + 0.5F);
-        GlStateManager.scale(.65f, .65f, .65f);
-        GlStateManager.enableCull();
 
 		ItemStack stack = mortar.getStack();
 		Minecraft mc = Minecraft.getMinecraft();
 		if(stack != null) {
 			if(!stack.isEmpty()) {
-				mc.getRenderItem().renderItem(stack, ItemCameraTransforms.TransformType.GROUND);
+				if(Block.getBlockFromItem(stack.getItem()) != Blocks.AIR) {
+			        GlStateManager.translate((float)x + 0.5F, (float)y, (float)z + 0.5F);
+			        //GlStateManager.scale(.2f, .2f, .2f);
+			        GlStateManager.enableCull();
+					mc.getRenderItem().renderItem(stack, ItemCameraTransforms.TransformType.GROUND);
+				} else {
+			        GlStateManager.translate((float)x + 0.5F, (float)y + .1f, (float)z + 0.5F);
+			        GlStateManager.scale(.65f, .65f, .65f);
+			        GlStateManager.enableCull();
+					mc.getRenderItem().renderItem(stack, ItemCameraTransforms.TransformType.GROUND);
+				}
 			}
 		}
         

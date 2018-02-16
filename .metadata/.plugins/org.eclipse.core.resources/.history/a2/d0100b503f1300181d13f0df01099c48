@@ -1,0 +1,23 @@
+package mithrandirr.khemi.api.mortar;
+
+import net.minecraft.item.ItemStack;
+
+public class GrindablePair {
+	
+	ItemStack itemStackIn;
+	ItemStack oreOut;
+	
+	public GrindablePair(ItemStack oreDictIn, ItemStack oreDictOut) {
+		this.itemStackIn = oreDictIn;
+		this.oreOut = oreDictOut;
+	}
+	
+	public ItemStack getItemStackIn() {
+		return itemStackIn;
+	}
+	
+	public ItemStack getItemStackOut() {
+		return oreOut;
+	}
+
+}

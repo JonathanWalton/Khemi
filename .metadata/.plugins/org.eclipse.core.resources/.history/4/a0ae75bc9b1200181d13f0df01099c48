@@ -1,0 +1,27 @@
+package mithrandirr.khemi.api;
+
+import mithrandirr.khemi.api.element.Elements;
+
+public class KhemiAPI {
+	
+	private static GrindablePair[] grindables;
+
+	public static void init() {
+		Elements.init();
+		
+		addGrindPair(new GrindablePair("", ""));
+	}
+	
+	public static void addGrindPair(GrindablePair pairIn) {
+		grindables[grindables.length] = pairIn;
+	}
+	
+	public GrindablePair returnGrindPair(int index) {
+		return grindables[index];
+	}
+	
+	public int returnGrindablesLength() {
+		return grindables.length;
+	}
+	
+}

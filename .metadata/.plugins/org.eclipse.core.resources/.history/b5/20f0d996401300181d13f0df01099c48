@@ -1,0 +1,38 @@
+package mithrandirr.khemi.api.mortar;
+
+import java.util.ArrayList;
+import java.util.List;
+
+import net.minecraft.item.Item;
+
+public class Mortar {
+	
+	private static List<Item> grindablesIn = new ArrayList<>();
+	private static List<Item> grindablesOut = new ArrayList<>();
+	private static List<Integer> grindablesOutCount = new ArrayList<>();
+	
+	public static void addGrindPair(Item grindableIn, Item grindableOut) {
+		grindablesIn.add(grindableIn);
+		grindablesOut.add(grindableOut);
+	}
+	
+	public static GrindablePair returnGrindPair(int index) {
+		return new GrindablePair(grindablesIn.get(index), grindablesOut.get(index));
+	}
+	
+	public static int returnGrindablesLength() {
+		if(grindablesIn.size() == grindablesOut.size())
+			return grindablesIn.size();
+		else
+			return 0;
+	}
+	
+	public static boolean isIncluded(Item itemIn) {
+		return grindablesIn.contains(itemIn);
+	}
+	
+	public static Item result(Item itemIn) {
+		return grindablesOut.get(grindablesIn.indexOf(itemIn));
+	}
+	
+}

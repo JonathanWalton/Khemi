@@ -1,0 +1,43 @@
+package mithrandirr.khemi.common.block.tile;
+
+import mithrandirr.khemi.common.recipe.RecipesMortar;
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraftforge.oredict.OreDictionary;
+
+public class TileMortar extends TileMod {
+
+	private ItemStack stack = ItemStack.EMPTY;
+	private static final String TAG_ITEM = "item";
+	private boolean hasOreDict = false;
+	private String oreDictName;
+	
+	public ItemStack getStack() {
+		sync();
+		return stack;
+	}
+	
+	public void setStack(ItemStack stack) {
+		this.stack = stack;
+		sync();
+	}
+
+	public void writePacketNBT(NBTTagCompound cmp) {
+		NBTTagCompound itemCmp = new NBTTagCompound();
+		if(!stack.isEmpty())
+			itemCmp = stack.writeToNBT(itemCmp);
+		cmp.setTag(TAG_ITEM, itemCmp);
+	}
+
+	public void readPacketNBT(NBTTagCompound cmp) {
+		NBTTagCompound itemCmp = cmp.getCompoundTag(TAG_ITEM);
+		stack = new ItemStack(itemCmp);
+	}
+
+	public void pestle(ItemStack itemIn) {
+		if(RecipesMortar.hasResult(itemIn)) {
+			setStack(RecipesMortar.getResult(itemIn));
+		}
+	}
+	
+}

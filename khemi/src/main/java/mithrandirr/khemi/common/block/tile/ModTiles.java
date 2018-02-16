@@ -1,0 +1,17 @@
+package mithrandirr.khemi.common.block.tile;
+
+import mithrandirr.khemi.client.lib.LibResources;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+
+public class ModTiles {
+
+	public static void init() {
+		registerTile(TileMortar.class, "mortar");
+	}
+
+	private static void registerTile(Class<? extends TileEntity> clazz, String key) {
+		GameRegistry.registerTileEntity(clazz, LibResources.PREFIX_MOD + key);
+	}
+
+}

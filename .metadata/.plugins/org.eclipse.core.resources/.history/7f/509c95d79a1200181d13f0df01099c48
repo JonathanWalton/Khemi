@@ -1,0 +1,15 @@
+package mithrandirr.khemi.common.recipe;
+
+import net.minecraft.item.ItemStack;
+
+public class RecipesMortar {
+
+	public boolean hasResult() {
+		return false;
+	}
+	
+	public ItemStack getResult() {
+		return ItemStack.EMPTY;
+	}
+	
+}

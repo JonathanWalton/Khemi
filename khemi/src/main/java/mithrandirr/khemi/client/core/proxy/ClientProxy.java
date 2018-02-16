@@ -8,7 +8,13 @@ import mithrandirr.khemi.client.render.RendererMortar;
 import mithrandirr.khemi.common.block.tile.TileMortar;
 import mithrandirr.khemi.common.core.helper.Vector3;
 import mithrandirr.khemi.common.core.proxy.IProxy;
+import mithrandirr.khemi.common.item.ModItems;
+import mithrandirr.khemi.common.lib.LibMod;
 import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.block.model.ModelResourceLocation;
+import net.minecraft.item.Item;
+import net.minecraftforge.client.model.ModelLoader;
+import net.minecraftforge.client.model.obj.OBJLoader;
 import net.minecraftforge.fml.client.registry.ClientRegistry;
 import net.minecraftforge.fml.common.FMLCommonHandler;
 import net.minecraftforge.fml.common.event.FMLInitializationEvent;
@@ -21,6 +27,8 @@ public class ClientProxy implements IProxy {
 	@Override
 	public void preInit(FMLPreInitializationEvent event) {
 		initRenderers();
+		OBJLoader.INSTANCE.addDomain(LibMod.MOD_ID);
+		registerModel(ModItems.pestle);
 	}
 
 	@Override
@@ -36,6 +44,10 @@ public class ClientProxy implements IProxy {
 	private void initRenderers() {
 		ClientRegistry.bindTileEntitySpecialRenderer(TileMortar.class, new RendererMortar());
 	}
+
+    public void registerModel(Item item) {
+        ModelLoader.setCustomModelResourceLocation(item, 0, new ModelResourceLocation(LibMod.MOD_ID + ":" + item.getUnlocalizedName().substring(5), "inventory"));
+    }
 
 	@Override
 	public long getWorldElapsedTicks() { return ClientTickHandler.ticksInGame; }

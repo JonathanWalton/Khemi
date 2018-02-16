@@ -1,0 +1,18 @@
+package mithrandirr.khemi.common.block.tile;
+
+import net.minecraft.item.ItemStack;
+
+public class TileMortar extends TileMod {
+
+	private ItemStack stack;
+	
+	public ItemStack getStack() {
+		return stack;
+	}
+	
+	public void setStack(ItemStack stack) {
+		this.stack = stack;
+		System.out.println(this.stack);
+	}
+
+}

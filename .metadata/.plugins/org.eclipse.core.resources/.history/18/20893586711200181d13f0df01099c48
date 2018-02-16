@@ -1,0 +1,5 @@
+package mithrandirr.khemi.common.core.helper;
+
+public class VanillaPacketDispatcher {
+
+}

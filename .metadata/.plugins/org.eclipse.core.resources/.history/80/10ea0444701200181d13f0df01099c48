@@ -1,0 +1,22 @@
+package mithrandirr.khemi.common.block.tile;
+
+import javax.annotation.Nonnull;
+
+import net.minecraft.item.ItemStack;
+import net.minecraft.nbt.NBTTagCompound;
+import net.minecraftforge.items.IItemHandlerModifiable;
+import net.minecraftforge.items.ItemStackHandler;
+
+public class TileMortar extends TileMod {
+
+	private ItemStack stack;
+	
+	public ItemStack getStack() {
+		return stack;
+	}
+	
+	public void setStack(ItemStack stack) {
+		this.stack = stack;
+	}
+	
+}

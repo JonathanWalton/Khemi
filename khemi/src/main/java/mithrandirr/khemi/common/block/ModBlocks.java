@@ -1,14 +1,12 @@
 package mithrandirr.khemi.common.block;
 
-import mithrandirr.khemi.client.lib.LibResources;
+import mithrandirr.khemi.common.block.tile.ModTiles;
 import mithrandirr.khemi.common.item.block.ItemBlockMod;
 import net.minecraft.block.Block;
 import net.minecraft.item.Item;
-import net.minecraft.tileentity.TileEntity;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
-import net.minecraftforge.fml.common.registry.GameRegistry;
 import net.minecraftforge.registries.IForgeRegistry;
 
 @Mod.EventBusSubscriber
@@ -33,6 +31,8 @@ public class ModBlocks {
 		registerBlock(phiale, evt);
 		registerBlock(retort, evt);
 		registerBlock(showGlobe, evt);
+		
+		ModTiles.init();
 	}
 
 	@SubscribeEvent
@@ -57,10 +57,6 @@ public class ModBlocks {
         IForgeRegistry<Item> r = evt.getRegistry();
 
         r.register(new ItemBlockMod(block).setRegistryName(block.getRegistryName()));
-    }
-
-    private static void registerTile(Class<? extends TileEntity> clazz, String key) {
-        GameRegistry.registerTileEntity(clazz, LibResources.PREFIX_MOD + key);
     }
 	
 }

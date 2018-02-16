@@ -1,0 +1,21 @@
+package mithrandirr.khemi.common.block.tile;
+
+import mithrandirr.khemi.client.lib.LibResources;
+import net.minecraft.tileentity.TileEntity;
+import net.minecraftforge.fml.common.Mod;
+import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+
+@Mod.EventBusSubscriber
+public class ModTiles {
+
+	@SubscribeEvent
+	public static void init() {
+		registerTile(TileMortar.class, "mortar");
+	}
+
+	private static void registerTile(Class<? extends TileEntity> clazz, String key) {
+		GameRegistry.registerTileEntity(clazz, LibResources.PREFIX_MOD + key);
+	}
+
+}

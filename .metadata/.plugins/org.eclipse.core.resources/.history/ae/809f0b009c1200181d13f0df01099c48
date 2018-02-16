@@ -1,0 +1,16 @@
+package mithrandirr.khemi.api;
+
+import mithrandirr.khemi.api.element.Elements;
+import mithrandirr.khemi.api.mortar.GrindablePair;
+
+public class KhemiAPI {
+	
+	private static GrindablePair[] grindables;
+
+	public static void init() {
+		Elements.init();
+		
+		addGrindPair(new GrindablePair("ironOre", "ironDust"));
+	}
+	
+}

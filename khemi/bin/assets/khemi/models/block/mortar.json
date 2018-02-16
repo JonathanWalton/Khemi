@@ -1,14 +1,13 @@
 {
-	"parent": "minecraft:block/cube_all",
+	"parent": "minecraft:block/block",
 	"textures": {
-		"particle": "blocks/e_particle",
-		"texture": "blocks/e_texture"
+		"texture": "khemi:blocks/world/petra/petra"
 	},
 	"elements": [ 	 
 		{
 			"__comment": "Box1",
-			"from": [ 5, 0, 5 ],
-			"to": [ 11, 1, 11 ],
+			"from": [ 5.000446, 0.0007998715, 5.000806 ],
+			"to": [ 11.00045, 1.0008, 11.00081 ],
 			"faces": {
 				"down": { "uv": [ 5, 5, 11, 11 ], "texture": "#texture" },
 				"up": { "uv": [ 5, 5, 11, 11 ], "texture": "#texture" },
@@ -20,8 +19,8 @@
 		},
 		{
 			"__comment": "Box5",
-			"from": [ 5, 1, 5 ],
-			"to": [ 6, 3, 11 ],
+			"from": [ 4.999541, 1.000261, 4.999685 ],
+			"to": [ 5.999541, 3.000261, 10.99969 ],
 			"faces": {
 				"down": { "uv": [ 5, 5, 6, 11 ], "texture": "#texture" },
 				"up": { "uv": [ 5, 5, 6, 11 ], "texture": "#texture" },
@@ -33,8 +32,8 @@
 		},
 		{
 			"__comment": "Box6",
-			"from": [ 10, 1, 5 ],
-			"to": [ 11, 3, 11 ],
+			"from": [ 9.999686, 1.000182, 4.999055 ],
+			"to": [ 10.99969, 3.000182, 10.99905 ],
 			"faces": {
 				"down": { "uv": [ 10, 5, 11, 11 ], "texture": "#texture" },
 				"up": { "uv": [ 10, 5, 11, 11 ], "texture": "#texture" },
@@ -46,8 +45,8 @@
 		},
 		{
 			"__comment": "Box4",
-			"from": [ 6, 1, 5 ],
-			"to": [ 10, 3, 6 ],
+			"from": [ 5.999333, 0.9998115, 4.99919 ],
+			"to": [ 9.999332, 2.999811, 5.99919 ],
 			"faces": {
 				"down": { "uv": [ 6, 10, 10, 11 ], "texture": "#texture" },
 				"up": { "uv": [ 6, 5, 10, 6 ], "texture": "#texture" },
@@ -59,8 +58,8 @@
 		},
 		{
 			"__comment": "Box5",
-			"from": [ 6, 1, 10 ],
-			"to": [ 10, 3, 11 ],
+			"from": [ 6.00093, 0.9991989, 9.999739 ],
+			"to": [ 10.00093, 2.999199, 10.99974 ],
 			"faces": {
 				"down": { "uv": [ 6, 5, 10, 6 ], "texture": "#texture" },
 				"up": { "uv": [ 6, 10, 10, 11 ], "texture": "#texture" },
